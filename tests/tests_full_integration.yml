@@ -95,7 +95,7 @@
           shell:
             cmd: getent group test_grp1@{{ ad_integration_realm }}
 
-      always:
-        - name: Teardown - Leave realm
-          command: realm leave
-          ignore_errors: true  # noqa ignore-errors
+              #always:
+              #  - name: Teardown - Leave realm
+              #    command: realm leave
+              #    ignore_errors: true  # noqa ignore-errors
