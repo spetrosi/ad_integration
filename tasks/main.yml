@@ -132,7 +132,6 @@
         {{ ad_integration_membership_software | quote }} \
         {{ ad_integration_join_parameters }} \
         {{ ad_integration_join_to_dc | quote }}
-  no_log: true
   when:
     - ad_integration_join_to_dc is not none
 
@@ -145,7 +144,6 @@
         {{ ad_integration_membership_software | quote }} \
         {{ ad_integration_join_parameters }} \
         {{ ad_integration_realm | quote }}
-  no_log: true
   when:
     - ad_integration_join_to_dc is none
 
@@ -159,7 +157,6 @@
 
 - name: Run realm join command
   shell: "{{ join_command }}"  # noqa 305
-  no_log: true
   when:
     - ad_integration_join_to_dc != __ad_integration_dummy_dc
     - ad_integration_realm != __ad_integration_dummy_realm
