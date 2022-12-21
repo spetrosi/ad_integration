@@ -101,8 +101,8 @@
           command: getent group test_grp1@{{ ad_integration_realm }}
           changed_when: false
 
-      always:
-        - name: Teardown - Leave realm
-          command: realm leave
-          ignore_errors: true  # noqa ignore-errors
-          changed_when: false
+            # always:
+            #   - name: Teardown - Leave realm
+            #     command: realm leave
+            #     ignore_errors: true  # noqa ignore-errors
+            #     changed_when: false
